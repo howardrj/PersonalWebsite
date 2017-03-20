@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+    <head> 
+        <title> Robert Howard </title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" /> 
+        <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
+        <script type="text/javascript" src="{% static "javascript/loader.js" %}" defer></script>
+    </head>
+
+    <body>
+
+        <div id="header">
+            <a class="header_link" href="#top">
+                Top
+            </a>
+        
+            <a class="header_link" href="#cv">
+                CV
+            </a>
+
+            <a class="header_link" href="#portfolio">
+                Portfolio
+            </a>
+
+            <a id ="contact_link" class="header_link" href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+        <div id="top_section" name="top">
+
+            <div id="image_container">  
+
+                <img id="my_picture" src="{% static "images/my_picture.png" %}">
+
+            </div>
+
+            <div id="short_description">
+
+                <div id="short_description_text">
+                    <p> Hi, I'm Robert Howard </p>
+                    <p style="font-size: 20px; margin-top: -10px"> Theoretical physicist turned software engineer</p>
+                </div>
+
+                <br>
+
+                <a id="twitter_link" href="/" title="Twitter">
+                    <img id="twitter_image" src="{% static "images/twitter.png" %}" class="logo">
+                </a>
+
+                <a id="github_link" href="https://github.com/howardrj" title="GitHub">
+                    <img id="github_image" src="{% static "images/github.png" %}" class="odd_logo" height="88" width="88">
+                </a>
+
+                <a id="linkedin_link" href="/" title="LinkedIn">
+                    <img id="linkedin_image" src="{% static "images/linkedin.png" %}" class="logo">
+                </a>
+
+            </div>
+        </div>
+
+        <div id="cv_section" name="cv">
+
+        </div>
+
+        <div id="portfolio_section" name="portfolio">
+
+        </div>
+
+        <div id="contact_section" name="contact_section">
+           
+            <form id="user_form" method="post" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <table class="index_form">
+                {% for field in contact_form %}
+                    <tr>
+                        <td> <label style="float:left"> {{ field.label }}: </label> </td>
+                        <td> {{ field }} </td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td class="error_entry"> {{ field.errors }}</td>
+                    </tr>
+                {% endfor %}
+                </table>
+
+                <div class="loader" id="contact_loader"> </div>
+                <input type="submit" value="Submit" name="contact" id="contact" class="button_with_loader">
+
+            </form>
+        </div>
+
+        <div id="footer_section">
+            <p id="signature"> Created by Robert Howard (howardrj@tcd.ie) </p>
+
+        </div>
+
+        {% if contact_fail %}
+        <script>
+            document.getElementById("contact_link").click();
+        </script>
+        {% endif %}
+        
+    </body>
+
+</html>
