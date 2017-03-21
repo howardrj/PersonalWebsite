@@ -9,36 +9,58 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
         <script type="text/javascript" src="{% static "javascript/loader.js" %}" defer></script>
         <script type="text/javascript" src="{% static "javascript/modals_utils.js" %}" defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
     </head>
 
     <body>
 
+        {% if contacted %}
             {% include "contacted_index_modal.html" %}
+        {% endif %}
 
         {% if email_fail %}
             {% include "email_fail.html" %}
         {% endif %}
 
         <div id="header">
-            <a class="header_link" href="#top">
+            <a id="top_link" class="header_link">
                 Top
             </a>
         
-            <a class="header_link" href="#cv">
+            <a id="cv_link" class="header_link">
                 CV
             </a>
 
-            <a class="header_link" href="#portfolio">
+            <a id="portfolio_link" class="header_link">
                 Portfolio
             </a>
 
-            <a id ="contact_link" class="header_link" href="#contact">
+            <a id ="contact_link" class="header_link">
                 Contact
             </a>
-
         </div>
 
-        <div id="top_section" name="top">
+        <!-- Code to control anchors -->
+        <script type="text/javascript">
+        
+            var header_links = document.getElementsByClassName("header_link");
+
+            for (var i = 0; i < header_links.length; i++)
+            {
+                header_links[i].addEventListener('click', function(event) {
+
+                    var section_id = event.target.id.slice(0, event.target.id.indexOf("link")) + "section";
+
+                    var top = document.getElementById(section_id).offsetTop;
+
+                    $(window).scrollTo(top, 1000);
+                });
+            }
+            
+        </script>
+
+        <div id="top_section">
 
             <div id="image_container">  
 
@@ -72,6 +94,242 @@
 
         <div id="cv_section" name="cv">
 
+            <h1> CV </h1>
+
+            <div id="education_subsection" class="cv_subsection">
+               <div class="subsection_header">
+                    <strong> Education </strong>
+                </div> 
+
+                <table class="cv_table">
+
+                    <!-- HPC -->
+                    <tr>
+                        <td class="course_title"> <strong>MSc in High Performance Computing </strong></td>
+                        <td> September 2014 - September 2015 </td>
+                    </tr>
+                    <tr>
+                        <td> Trinity College, Dublin </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Overall Grade: 66% (II.1)
+                        <td></td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+
+                    </tr>
+
+                    <!-- TP -->
+                    <tr>
+                        <td class="course_title"> <strong>B.A. in Theoretical Physics </strong></td>
+                        <td> September 2010 - June 2014 </td>
+                    </tr>
+                    <tr>
+                        <td> Trinity College, Dublin </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Overall Grade: 65% (II.1)
+                        <td></td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+
+                    </tr>
+
+                    <!-- LC -->
+                    <tr>
+                        <td class="course_title"> <strong> Leaving Certificate </strong></td>
+                        <td> September 2005 - June 2010 </td>
+                    </tr>
+                    <tr>
+                        <td> St. Peter's College, Dunboyne </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> Overall Grade: 520 points (95th percentile)
+                        <td></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div id="work_subsection" class="cv_subsection">
+               <div class="subsection_header">
+                    <strong> Work Experience </strong>
+                </div> 
+
+                <table class="cv_table">
+
+                    <!-- Druid -->
+                    <tr>
+                        <td class="course_title"> <strong> Druid Software </strong></td>
+                        <td> October 2015 - Present </td>
+                    </tr>
+                    <tr>
+                        <td> Software Engineer </td>
+                        <td> Bray, Co. Wicklow </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of what I do in work everyday.
+                        </td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+                    </tr>
+
+                    <!-- School of Maths -->
+                    <tr>
+                        <td class="course_title"> <strong> School of Mathematics </strong></td>
+                        <td> January 2015 - May 2015 </td>
+                    </tr>
+                    <tr>
+                        <td> Maths Tutor </td>
+                        <td> Trinity College, Dublin </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of what I do in work everyday.
+                        </td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+                    </tr>
+
+                    <!-- Dunboyne Castle -->
+                    <tr>
+                        <td class="course_title"> <strong> Dunboyne Castle Hotel & Spa </strong></td>
+                        <td> July 2011 - July 2015 </td>
+                    </tr>
+                    <tr>
+                        <td> Bartender/Server</td>
+                        <td> Dunboyne, Co. Meath </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of what I do in work everyday.
+                        </td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+                    </tr>
+
+                    <!-- Itadaki -->
+                    <tr>
+                        <td class="course_title"> <strong> Itadaki Boston </strong></td>
+                        <td> June 2013 - August 2013 </td>
+                    </tr>
+                    <tr>
+                        <td> Bartender/Server</td>
+                        <td> Newbury Street, Boston, MA </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of what I do in work everyday.
+                        </td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+                    </tr>
+
+                    <!-- Dunnes -->
+                    <tr>
+                        <td class="course_title"> <strong> Dunnes Stores </strong></td>
+                        <td> August 2010 - January 2011 </td>
+                    </tr>
+                    <tr>
+                        <td> Sales Assistant</td>
+                        <td> Blanchardstown, Dublin 15 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of what I do in work everyday.
+                        </td>
+                    </tr>
+
+                 </table>
+
+            </div>
+
+            <div id="research_subsection" class="cv_subsection">
+               <div class="subsection_header">
+                    <strong> Research Experience </strong>
+                </div> 
+
+                <table class="cv_table">
+
+                    <!-- Master's Thesis -->
+                    <tr>
+                        <td class="course_title"> <strong> Master's Thesis </strong></td>
+                        <td> May 2015 - September 2015 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> GPU Acceleration of Hadron Field Formulation in Lattice QCD </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of my research.
+                        </td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+                    </tr>
+
+                    <!-- Summer Internship -->
+                    <tr>
+                        <td class="course_title"> <strong> Summer Internship Project </strong></td>
+                        <td> May 2014 - August 2014 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> One-Loop Matching Factors for Non-Exceptional Schemes </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of my research.
+                        </td>
+                    </tr>
+
+                    <tr class="separator">
+                        <td> </td>
+                    </tr>
+
+                    <!-- Final Year Undergraduate -->
+                    <tr>
+                        <td class="course_title"> <strong> Final Year Undergraduate Thesis </strong></td>
+                        <td> September 2013 - January 2014 </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> Spontaneous Emission Above a Metamaterial Slab</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> 
+                            Big fantastic description of my research.
+                        </td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div id="technical_strengths_subsection" class="cv_subsection">
+               <div class="subsection_header">
+                    <strong> Technical Strengths </strong>
+                </div> 
+
+                I am unreal
+            </div>
+
         </div>
 
         <div id="portfolio_section" name="portfolio">
@@ -79,6 +337,10 @@
         </div>
 
         <div id="contact_section" name="contact_section">
+            
+            <h1> Contact </h1>
+
+            <p> Please send me a message if you would like to get in touch. </p>
            
             <form id="user_form" method="post" enctype="multipart/form-data">
 

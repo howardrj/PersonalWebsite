@@ -2,6 +2,10 @@ body {
     margin: 0px;
 }
 
+p {
+    font-family: "Oswald";
+}
+
 /**********/
 /* Header */
 /**********/
@@ -99,9 +103,58 @@ body {
 /* CV Section */
 /**************/
 
+#cv_section {
+    margin-top: 30px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    font-family: "Oswald";
+    padding-bottom: 50px;
+}
+
+.cv_subsection {
+    width: 800px;
+    margin: 30px auto;
+}
+
+.subsection_header {
+    text-align:left;
+    font-size: 18px;
+    border-bottom: 2px solid black;
+}
+
+.cv_table {
+
+    margin-top: 20px;
+    width: 100%;
+}
+
+.cv_table td {
+
+    font-size: 16px;
+    text-align: left;
+}
+
+td.course_title {
+
+    font-size: 18px;
+}
+
+tr.separator {
+    height: 20px;
+}
+
 /*******************/
 /* Contact Section */
 /*******************/
+
+#contact_section {
+
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Oswald";
+
+}
+
 .index_form {
     margin-top: 30px;
     margin-left:auto;
@@ -153,7 +206,7 @@ input[type='text'], input[type='password'], textarea {
 }                                                                                                                      
                                                                                                                        
 input[type='text']:focus , input[type='password']:focus, textarea:focus {                                              
-    border-color: black !important;                                                                                    
+    border-color: black !important;
     outline: none !important;                                                                                          
 } 
 
