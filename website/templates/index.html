@@ -8,9 +8,16 @@
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" /> 
         <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}">
         <script type="text/javascript" src="{% static "javascript/loader.js" %}" defer></script>
+        <script type="text/javascript" src="{% static "javascript/modals_utils.js" %}" defer></script>
     </head>
 
     <body>
+
+            {% include "contacted_index_modal.html" %}
+
+        {% if email_fail %}
+            {% include "email_fail.html" %}
+        {% endif %}
 
         <div id="header">
             <a class="header_link" href="#top">
@@ -101,7 +108,9 @@
 
         </div>
 
+        
         {% if contact_fail %}
+        <!-- Shift page down to contact form -->
         <script>
             document.getElementById("contact_link").click();
         </script>

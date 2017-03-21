@@ -201,3 +201,168 @@ td.error_entry {
     font-size: 15px;
     font-family: "Oswald";
 }
+
+/***************/
+/* Modal Stuff */
+/***************/
+
+.modal {
+    position: absolute;
+    z-index: 3;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+
+.modal p {
+    font-family: "Oswald";
+    font-size: 16px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 2px solid black;
+    width: 50%;
+    max-width: 700px;
+    min-width: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.close:hover, .close:focus {
+    cursor: pointer;
+}
+
+.modal-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
+    color: black;
+    font-family: "Oswald";
+    border-bottom: 1px solid black;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.modal-footer {
+    padding-right: 20px;
+    background-color: white;
+    color: black;
+    font-family: "Oswald";
+    border-top: 1px solid black;
+    /* Prevents submit button from floating outside div */
+    overflow:hidden;
+}
+
+.modal-footer input[type='submit'] {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+
+.modal-footer button {
+    position: relative;
+    float: right;
+    margin-right:  10px;
+    margin-top:    30px;
+    margin-bottom: 30px !important;
+}
+
+.modal-footer .loader {
+    position: relative;
+    float: right;
+    margin-right: 10px;
+}
+
+/***********/
+/* Buttons */
+/***********/
+
+button {
+    font-family: "Oswald";
+    text-align: center;
+    border: 2px solid black;
+    cursor: pointer;
+    white-space: nowrap;
+    background: white;
+    color:      black;
+    text-decoration: none;
+    position: relative;
+}
+
+button:hover {
+    color: white;
+    background-color: black;
+}
+
+button:focus {
+    outline: none;
+    color: white;
+    background-color: black;
+}
+
+button.large_button {
+    padding-top:    5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+button.small_button {
+    font-size: 18px;
+    width: 100px;
+    padding-top:    5px;
+    padding-bottom: 5px;
+}
+
+.header_button_container {
+    margin-right: 30px;
+    margin-left: 8px;
+}
+
+/***********/
+/* General */
+/***********/
+
+.show {
+    display: block;
+}
+
+
+
