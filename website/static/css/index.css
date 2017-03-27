@@ -148,11 +148,9 @@ tr.separator {
 /*******************/
 
 #contact_section {
-
     padding-top: 30px;
     text-align: center;
     font-family: "Oswald";
-
 }
 
 .index_form {
@@ -417,5 +415,13 @@ button.small_button {
     display: block;
 }
 
-
-
+/*********************/
+/* Portfolio Section */
+/*********************/
+#portfolio_section {
+    margin-top: 30px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    font-family: "Oswald";
+    padding-bottom: 50px;
+}

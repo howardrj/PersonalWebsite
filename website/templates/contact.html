@@ -1,0 +1,28 @@
+<div id="contact_section" name="contact_section">
+    
+    <h1> Contact </h1>
+
+    <p> Please send me a message if you would like to get in touch. </p>
+   
+    <form id="user_form" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        <table class="index_form">
+        {% for field in contact_form %}
+            <tr>
+                <td> <label style="float:left"> {{ field.label }}: </label> </td>
+                <td> {{ field }} </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td class="error_entry"> {{ field.errors }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+
+        <div class="loader" id="contact_loader"> </div>
+        <input type="submit" value="Submit" name="contact" id="contact" class="button_with_loader">
+
+    </form>
+</div>
