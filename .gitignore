@@ -4,3 +4,4 @@ secrets.py
 clear_users
 *.swp
 *.log
+CDN/

@@ -1,0 +1,16 @@
+[Unit]
+Description=Personal Website Gunicorn HTTP Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/Personal-Website
+ExecStart=/usr/local/bin/gunicorn --workers 9 --bind unix:/var/www/Personal-Website/PersonalWebsite.sock PersonalWebsite.wsgi:application
+User=root
+Group=root
+Restart=always
+RestartSec=1
+StartLimitBurst=0
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,45 @@
+upstream personal_website_gunicorn_http_server {
+
+    server unix:/var/www/Personal-Website/PersonalWebsite.sock fail_timeout=0;
+
+}
+
+# Redirect http to https
+server {
+
+    server_name robbie-howard.com www.robbie-howard.com;
+    listen 80;
+    return 301 https://robbie-howard.com$request_uri;
+
+}
+
+server {
+
+    server_name robbie-howard.com www.robbie-howard.com;
+    listen 443;
+
+    ssl on;
+    ssl_certificate /etc/letsencrypt/live/robbie-howard.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/robbie-howard.com/privkey.pem;
+
+    client_max_body_size 4G;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    location /static/ {
+        alias /var/www/Personal-Website/CDN/;
+    }
+
+   location / {
+
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;  # <-
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+
+        if (!-f $request_filename) {
+            proxy_pass http://personal_website_gunicorn_http_server;
+            break;
+        }
+    }
+}
