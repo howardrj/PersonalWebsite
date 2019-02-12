@@ -425,3 +425,59 @@ button.small_button {
     font-family: "Oswald";
     padding-bottom: 50px;
 }
+
+.project_container {
+    border: 2px solid black;
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    padding: 0px;
+    margin: 50px;
+    text-decoration: none;
+    vertical-align: top;
+}
+
+.project_container:hover {
+    cursor:hand;
+    cursor:pointer;
+}
+
+.project_header {
+    margin: 0px;
+    padding: 0px;
+    height: 15%;
+    border-bottom: 1px solid black;
+    width: 100%;
+    position:relative;
+    text-align: center;
+    display:table;
+}
+
+.project_title {
+    vertical-align:middle;
+    display:table-cell;
+    font-size: 22px;
+}
+
+.project_body {
+    display: block;
+}
+
+.project_description_container {
+    display: table;
+    margin: 0px;
+    padding: 5px;
+    height: 30%;
+    border-top: 1px solid black;
+    width: 97%;
+    position:absolute;
+    text-align: left;
+    bottom: 0;
+    text-align: center;
+}
+
+.project_description {
+    display:table-cell;
+    vertical-align:middle;
+}
