@@ -11,7 +11,7 @@ logger = logging.getLogger('PersonalWebsite.website.views')
 
 
 # Create your views here.
-def indexPage(request):
+def index_page(request):
 
     context = RequestContext(request)
 

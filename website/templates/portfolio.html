@@ -4,7 +4,7 @@
 
     <h4> Below is a short list of some personal development projects I have worked on. </h4>
 
-    <div class="project_container" data-href="https://guindex.ie" title="https://guindex.ie">
+    <a class="project_container" href="https://guindex.ie" target="_blank" title="Guindex">
 
         <div class="project_header">
             <span class="project_title"> Guindex </span>
@@ -16,15 +16,32 @@
 
         <div class="project_description_container">
             <span class="project_description">
-                A web application that keeps track of Guinness prices throuighout Ireland from user submissions.
+                A web application that keeps track of Guinness prices throughout Ireland from user submissions.
             </span>
         </div>
-    </div>
+    </a>
 
-    <div class="project_container" data-href="https://guindex.ie" title="https://guindex.ie">
+    <a class="project_container" href="/maze_generation/" target="_blank" title="Maze Generator">
 
         <div class="project_header">
-            <span class="project_title"> Take a Rest </span>
+            <span class="project_title"> Maze Generator </span>
+        </div>
+
+        <div class="project_body">
+
+        </div>
+
+        <div class="project_description_container">
+            <span class="project_description">
+                A demonstration of Eller's algorithm for maze generation in javascript.
+            </span>
+        </div>
+    </a>
+
+    <a class="project_container" data-href="https://guindex.ie" title="https://guindex.ie">
+
+        <div class="project_header">
+
         </div>
 
         <div class="project_body">
@@ -34,35 +51,6 @@
         <div class="project_description_container">
 
         </div>
-    </div>
+    </a>
 
-    <div class="project_container" data-href="https://guindex.ie" title="https://guindex.ie">
-
-        <div class="project_header">
-
-        </div>
-
-        <div class="project_body">
-
-        </div>
-
-        <div class="project_description_container">
-
-        </div>
-    </div>
-
-    <script>
-
-        $('.project_container').on('click', function () {
-
-            // Get project container link and open in new tab
-
-            var link = this.getAttribute('data-href');
-            var tab  = window.open(link, '_blank');
-
-            tab.focus();
-        });
-
-    </script>
-    
 </div>

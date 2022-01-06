@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'maze_generation',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -59,6 +60,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'APP_DIRS': True,
         'DIRS': [os.path.join(BASE_DIR, "website/templates"),
+                 os.path.join(BASE_DIR, "maze_generation/maze_generation/templates"),
                  os.path.join(BASE_DIR, "templates")],
         'OPTIONS': {
             'context_processors': [

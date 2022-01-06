@@ -426,7 +426,7 @@ button.small_button {
     padding-bottom: 50px;
 }
 
-.project_container {
+a.project_container {
     border: 2px solid black;
     display: inline-block;
     position: relative;
@@ -436,6 +436,7 @@ button.small_button {
     margin: 50px;
     text-decoration: none;
     vertical-align: top;
+    color: inherit;
 }
 
 .project_container:hover {

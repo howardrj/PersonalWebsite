@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from website.views import indexPage
+from website.views import index_page
+from maze_generation.views import maze_generation_page
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', indexPage),
+    url(r'^maze_generation/', maze_generation_page),
+    url(r'^$', index_page),
 ]
