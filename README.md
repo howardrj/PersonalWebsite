@@ -7,6 +7,8 @@ git submodule update --init --recursive
 
 You will also need to add a secrets.py file to the PersonalWebsite directory with the following variables set:
 
+```
 KEY = '????' # django SECRET_KEY
 EMAIL = '????' # Email address for sending emails in backend
 PASSWORD = '????' # Password for above email
+```
