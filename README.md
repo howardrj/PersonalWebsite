@@ -1,5 +1,5 @@
 # PersonalWebsite
-My personal website
+My personal website. It is deployed here: https://robbie-howard.com/
 
 This repo contains git submodules.
 After cloning the repo please run the following command (in the repo's root directory) to pull in the submodules:
