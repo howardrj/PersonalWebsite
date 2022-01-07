@@ -12,4 +12,4 @@ def maze_generation_page(request):
 
     context = RequestContext(request)
 
-    return render_to_response('maze.html', context_dict, context)
+    return render_to_response('maze_django.html', context_dict, context)
