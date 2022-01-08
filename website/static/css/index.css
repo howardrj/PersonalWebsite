@@ -463,6 +463,8 @@ a.project_container {
 
 .project_body {
     display: block;
+    width: 100%;
+    height: 55%;
 }
 
 .project_description_container {
@@ -481,4 +483,10 @@ a.project_container {
 .project_description {
     display:table-cell;
     vertical-align:middle;
+}
+
+.project_image {
+    margin: 2px;
+    max-height: 90%;
+    max-width: 90%;
 }
