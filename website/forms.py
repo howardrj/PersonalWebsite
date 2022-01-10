@@ -6,6 +6,7 @@ from django.conf import settings
 from django import forms
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail as sendMail
 
 
 logger = logging.getLogger('PersonalWebsite.website.forms')
@@ -57,19 +58,10 @@ class ContactForm (forms.Form):
     def sendEmail(self, data):
 
         sender    = settings.EMAIL_HOST_USER
-        receivers = [sender]
+        receivers = [sender, ]
 
-        smtpObj = smtplib.SMTP(settings.EMAIL_HOST, 587)
-        smtpObj.ehlo()
-        smtpObj.starttls()
-        smtpObj.login(sender, settings.EMAIL_HOST_PASSWORD)
+        logger.debug("Sending %s email to %s from %s", data['subject'], receivers, data['email'])
 
-        msg = MIMEText(data['message'])
-        msg['Subject'] = data['subject']
-        msg['From']    = data['email']
-        msg['To']      = settings.EMAIL_HOST_USER
+        subject = "Contact Message from %s - %s" % (data['email'], data['subject'])
 
-        logger.debug("Sending %s email to %s", msg['Subject'], data['email'])
-
-        smtpObj.sendmail(sender, receivers, msg.as_string())
-        smtpObj.close()
+        sendMail(subject, data['message'], sender, receivers)
