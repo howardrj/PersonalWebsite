@@ -23,7 +23,7 @@ def index_page(request):
 
         contact_form = ContactForm(data=request.POST)
 
-        if contact_form.is_valid():
+        if contact_form.is_valid() and contact_form.recaptcha_is_valid(request):
 
             logger.info("Contact form data was valid. Generating email")
 
@@ -34,7 +34,7 @@ def index_page(request):
             data['message'] = contact_form.cleaned_data['message']
 
             try:
-                contact_form.sendEmail(data)
+                contact_form.send_email(data)
 
                 response = HttpResponseRedirect('/')
 

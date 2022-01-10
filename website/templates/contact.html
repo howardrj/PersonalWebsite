@@ -19,11 +19,19 @@
                 <td class="error_entry"> {{ field.errors }}</td>
             </tr>
         {% endfor %}
+           
+            <tr>
+                <script src='https://www.google.com/recaptcha/api.js'></script>
+                <td> </td>
+                <td> 
+                    <div class="g-recaptcha" data-sitekey="6Ld04wQeAAAAAPdNNpgrjmLPj4eVTJR_CW1pTSEF"></div>
+                </td>
+            </tr>
+
         </table>
 
         <div class="loader" id="contact_button_loader"> </div>
         <input type="submit" value="Submit" name="contact" id="contact_button" class="button_with_loader">
 
     </form>
-
 </div>
