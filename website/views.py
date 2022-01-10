@@ -15,6 +15,7 @@ def index_page(request):
 
     contact_form = ContactForm()
     email_fail = False
+    contact_fail = False
 
     if request.method == 'POST' and 'contact' in request.POST:
 
@@ -48,6 +49,7 @@ def index_page(request):
                 email_fail = True
         else:
             logger.error("Contact form data was invalid")
+            contact_fail = True
 
     logger.info("Rendering index.html")
 
@@ -56,7 +58,8 @@ def index_page(request):
 
         context_dict = {'contact_form': contact_form,
                         'contacted'   : True,
-                        'email_fail'  : email_fail}
+                        'email_fail'  : email_fail,
+                        'contact_fail': contact_fail}
 
         response = render(request, 'index.html', context_dict)
         response.delete_cookie('provided_email')
@@ -67,6 +70,7 @@ def index_page(request):
 
         context_dict = {'contact_form': contact_form,
                         'contacted'   : False,
-                        'email_fail'  : email_fail}
+                        'email_fail'  : email_fail,
+                        'contact_fail': contact_fail}
 
         return render(request, 'index.html', context_dict)

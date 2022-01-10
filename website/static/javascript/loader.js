@@ -23,5 +23,5 @@ var loader_buttons = document.getElementsByClassName('button_with_loader');
 
 for (var i=0; i<loader_buttons.length; i++)
 {
-    loader_buttons[i].addEventListener('click', function(event) { showLoader(event) } );
+    loader_buttons[i].addEventListener('submit', function(event) { showLoader(event) } );
 }
