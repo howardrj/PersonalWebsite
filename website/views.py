@@ -2,7 +2,7 @@ import logging
 import smtplib
 
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 
 from website.forms import ContactForm
@@ -13,16 +13,14 @@ logger = logging.getLogger('PersonalWebsite.website.views')
 # Create your views here.
 def index_page(request):
 
-    context = RequestContext(request)
-
     contact_form = ContactForm()
-    email_fail   = False
+    email_fail = False
 
     if request.method == 'POST' and 'contact' in request.POST:
 
         logger.info("Contact form was posted - %s", request.POST)
 
-        contact_form = ContactForm(data = request.POST)
+        contact_form = ContactForm(data=request.POST)
 
         if contact_form.is_valid():
 
@@ -39,7 +37,7 @@ def index_page(request):
 
                 response = HttpResponseRedirect('/')
 
-                # Add cookie so we know succesful was posted when handling redirect
+                # Add cookie so we know succesful contact form was posted when handling redirect
                 # Could pass this email to template (not doing it at the moment)
                 response.set_cookie('provided_email', data['email'])
 
@@ -60,7 +58,7 @@ def index_page(request):
                         'contacted'   : True,
                         'email_fail'  : email_fail}
 
-        response = render_to_response('index.html', context_dict, context)
+        response = render(request, 'index.html', context_dict)
         response.delete_cookie('provided_email')
 
         return response
@@ -71,7 +69,4 @@ def index_page(request):
                         'contacted'   : False,
                         'email_fail'  : email_fail}
 
-        if email_fail:
-            context_dict['email'] = data['email']
-
-        return render_to_response('index.html', context_dict, context)
+        return render(request, 'index.html', context_dict)

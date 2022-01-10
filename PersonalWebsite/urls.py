@@ -20,7 +20,6 @@ from website.views import index_page
 from maze_generation.views import maze_generation_page
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^maze_generation/', maze_generation_page),
     url(r'^$', index_page),
 ]
