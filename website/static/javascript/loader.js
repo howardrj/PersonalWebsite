@@ -1,6 +1,10 @@
 function showLoader(evt)
 { 
-    var loader_button = evt.target;
+    var form = evt.target;
+    var loader_button = form.querySelector(".button_with_loader");
+
+    if (!loader_button)
+        return;
     
     document.getElementById(loader_button.id).style.display = 'none';
 
@@ -18,10 +22,8 @@ function hideLoader(loader_button_id)
     loader.style.visibility = 'hidden';
 }
 
-// Add event listeners
-var loader_buttons = document.getElementsByClassName('button_with_loader');
-
-for (var i=0; i<loader_buttons.length; i++)
+// Add event listeners to form submit buttons
+for (var i = 0; i < document.forms.length; i++)
 {
-    loader_buttons[i].addEventListener('submit', function(event) { showLoader(event) } );
+    document.forms[i].addEventListener('submit', function(event) { showLoader(event) } );
 }

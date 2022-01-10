@@ -4,7 +4,7 @@
 
     <p> Please send me a message if you would like to get in touch. </p>
    
-    <form id="user_form" method="post" enctype="multipart/form-data">
+    <form id="contact_form" method="post" enctype="multipart/form-data">
 
         {% csrf_token %}
 
@@ -21,8 +21,9 @@
         {% endfor %}
         </table>
 
-        <div class="loader" id="contact_loader"> </div>
-        <input type="submit" value="Submit" name="contact" id="contact" class="button_with_loader">
+        <div class="loader" id="contact_button_loader"> </div>
+        <input type="submit" value="Submit" name="contact" id="contact_button" class="button_with_loader">
 
     </form>
+
 </div>
