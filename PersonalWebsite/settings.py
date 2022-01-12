@@ -39,8 +39,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'website',
     'maze_generation',
+    'poem_per_day'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -154,4 +156,10 @@ LOGGING = {
             'level': 'DEBUG',
         },
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
 }

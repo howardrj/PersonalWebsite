@@ -490,3 +490,7 @@ a.project_container {
     max-height: 90%;
     max-width: 90%;
 }
+
+#poem_per_day_image {
+    font-size: 150px;
+}
