@@ -4,10 +4,11 @@ import smtplib
 from django.template import RequestContext
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.conf import settings
 
 from website.forms import ContactForm
 
-logger = logging.getLogger('PersonalWebsite.website.views')
+logger = logging.getLogger(settings.PROJECT_NAME)
 
 
 # Create your views here.

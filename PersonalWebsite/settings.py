@@ -29,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['172.28.4.152', 'robbie-howard.com', '127.0.0.1', '45.79.148.4']
 
+PROJECT_NAME = 'PersonalWebsite'
+
 
 # Application definition
 
