@@ -1,6 +1,6 @@
-[submodule "maze_generation/maze_generation"]
-	path = maze_generation/maze_generation
-	url = https://github.com/howardrj/Maze-Generation.git
 [submodule "poem_per_day"]
 	path = poem_per_day
 	url = https://github.com/howardrj/PoemPerDay
+[submodule "maze_generation"]
+	path = maze_generation
+	url = https://github.com/howardrj/MazeGeneration.git
