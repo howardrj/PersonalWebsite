@@ -27,7 +27,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = secrets.GOOGLE_RECAPTCHA_SECRET_KEY
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.28.4.152', 'robbie-howard.com', '127.0.0.1', '45.79.148.4']
+ALLOWED_HOSTS = ['robbie-howard.com', '45.79.148.4', 'localhost', '127.0.0.1']
 
 PROJECT_NAME = 'PersonalWebsite'
 
@@ -44,7 +44,8 @@ INSTALLED_APPS = (
     'rest_framework',
     'website',
     'maze_generation',
-    'poem_per_day'
+    'poem_per_day',
+    'painting_per_day'
 )
 
 MIDDLEWARE_CLASSES = (

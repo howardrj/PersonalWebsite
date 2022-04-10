@@ -4,3 +4,6 @@
 [submodule "maze_generation"]
 	path = maze_generation
 	url = https://github.com/howardrj/MazeGeneration.git
+[submodule "painting_per_day"]
+	path = painting_per_day
+	url = https://github.com/howardrj/PaintingPerDay.git

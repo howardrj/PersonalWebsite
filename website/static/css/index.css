@@ -494,3 +494,8 @@ a.project_container {
 #poem_per_day_image {
     font-size: 150px;
 }
+
+#painting_per_day_image {
+    margin-top: 7px;
+    font-size: 130px;
+}
