@@ -24,6 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = secrets.KEY 
 GOOGLE_RECAPTCHA_SECRET_KEY = secrets.GOOGLE_RECAPTCHA_SECRET_KEY
 
+ARTSY_CLIENT_ID = secrets.ARTSY_CLIENT_ID
+ARTSY_CLIENT_SECRET = secrets.ARTSY_CLIENT_SECRET
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
